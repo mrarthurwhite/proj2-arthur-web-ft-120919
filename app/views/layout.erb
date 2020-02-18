@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Kingdom of Heaven Administration</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  </head>
+
+  <nav class="blue lighten-3">
+    <a href="/" class="brand-logo" >Heavenly Home</a>
+    <div class="container">
+   <% if Helpers.is_logged_in?(session) %>
+    <ul class="right">
+      <% @user = Helpers.current_user(session) %>
+      <li><a href="/missions">Welcome</a> </li>
+      <li><a href="/users/<%=@user.username %>">View My Missions</a> </li>
+      <li><a href="/missions/new">Go on a New Mission  </a> </li>
+      <li><a href="/allmissions">View All Missions</a> </li>
+      <li><a href="/logout">Log Out</a></li>
+    </ul>
+    <%end %>
+    </div>
+  </nav>
+  <body>
+  <div class="container">
+    <div class="welcome">
+      <h5 class="blue-text">Welcome to Kingdom of Heaven Administrative Portal</h5>
+    </div>
+
+      <%= yield %>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+
+  </body>
+
+
+</html>

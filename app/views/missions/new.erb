@@ -1,0 +1,15 @@
+<% if Helpers.is_logged_in?(session) %>
+<%= @error %>
+  <form action='/missions' method="post">
+
+    Enter your next mission:
+
+    <input type="text" name="content"><br>
+    <button class="waves-effect  blue lighten-3 btn-small" type="submit" name="submit">
+      Submit
+    </button>
+  </form>
+
+  <% else %>
+      <h1> You Must Be Logged in to see assigned Missions </h1>
+  <% end %>

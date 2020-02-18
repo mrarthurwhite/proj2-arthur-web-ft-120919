@@ -1,0 +1,19 @@
+
+<% @user = Helpers.current_user(session) %>
+<br>Welcome, <%= @user.username.capitalize%>!<br>
+<br><br>
+What would you like to do?
+<br><br>
+<a class="waves-effect  blue lighten-3 btn-small"
+   href="/users/<%=@user.username %>">
+  View My Missions </a>
+
+<a class="waves-effect  blue lighten-3 btn-small"
+   href="/missions/new">
+  Go on a New Mission </a>
+
+<a class="waves-effect  blue lighten-3 btn-small"
+   href="/allmissions">
+  View All Missions </a>
+
+

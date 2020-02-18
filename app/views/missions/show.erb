@@ -1,0 +1,19 @@
+
+<div class="mission">
+
+  <h4>Mission: </h4>
+
+  <%= @mission.content %>
+  <br>
+  <a class="waves-effect  blue lighten-3 btn-small"
+     href="/missions/<%= @mission.id%>/edit">
+    Edit Mission</a>
+<br><br>
+  <form action="/missions/<%= @mission.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button class="waves-effect  blue lighten-3 btn-small" type="submit" name="submit">
+      Delete mission
+    </button>
+  </form>
+</div><br>
+

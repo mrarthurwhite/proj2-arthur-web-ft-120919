@@ -1,0 +1,9 @@
+<br>Welcome, <%= @user.username.capitalize%>!<br>
+<br>
+All missions:
+
+<ol>
+<% @missions.each do |mission| %>
+  <li> <b>Mission:</b> <%= mission.content %>  <i>undertaken by</i> <%= mission.user.username.capitalize %></li>
+<% end %>
+</ol>

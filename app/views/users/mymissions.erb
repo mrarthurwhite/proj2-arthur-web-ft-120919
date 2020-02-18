@@ -1,0 +1,12 @@
+<p>Welcome to your missions, <%= @user.username.capitalize%>!!</p>
+
+<ol>
+  <% @user.missions.each do |mission| %>
+    <li> <%= mission.content %>
+      <a class="waves-effect  blue lighten-3 btn-small"
+         href="/missions/<%= mission.id%>/edit">
+        Edit</a>
+    </li>
+    <br>
+  <% end %>
+</ol>
